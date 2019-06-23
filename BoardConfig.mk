@@ -91,3 +91,10 @@ BOARD_SEPOLICY_DIRS += device/generic/common/sepolicy/nonplat \
                        system/bt/vendor_libs/linux/sepolicy \
 
 BOARD_PLAT_PRIVATE_SEPOLICY_DIR := device/generic/common/sepolicy/plat_private
+
+BOARD_USES_MINIGBM := true
+BOARD_USES_MINIGBM_INTEL := true
+BOARD_USES_GRALLOC1 := true
+BOARD_USES_IA_HWCOMPOSER := true
+TARGET_USES_HWC2 ?= true
+#BOARD_USES_VULKAN := true
