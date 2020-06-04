@@ -207,6 +207,7 @@ function init_hal_gralloc()
 function init_hal_hwcomposer()
 {
 	# TODO
+	[ "$HWC" = "drmfb" ] && start vendor.hwcomposer-2-1.drmfb
 	return
 }
 
