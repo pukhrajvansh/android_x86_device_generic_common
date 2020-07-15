@@ -22,7 +22,7 @@ fi
 if [ -s /system/lib$1/libhoudini.so ]; then
 	log -pi -thoudini "found /system/lib$1/libhoudini.so"
 elif [ -e /system/etc/houdini$v.sfs ]; then
-	mount /system/etc/houdini$v.sfs $dest_dir
+	mount -o ro /system/etc/houdini$v.sfs $dest_dir
 else
 	if mountpoint -q $dest_dir; then
 		kill -9 `fuser -m $dest_dir`
@@ -30,7 +30,7 @@ else
 	fi
 	mkdir -p /data/arm
 	cd /data/arm
-	while ! mount houdini$v.sfs $dest_dir; do
+	while ! mount -o ro houdini$v.sfs $dest_dir; do
 		while [ "$(getprop net.dns1)" = "" ]; do
 			sleep 10
 		done
