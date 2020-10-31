@@ -187,16 +187,14 @@ function init_hal_gralloc()
 {
 	case "$(readlink /sys/class/graphics/fb0/device/driver)" in
 		*virtio_gpu)
-			if [ "$HWACCEL" != "0" ]; then
-				set_property ro.hardware.hwcomposer drm
-				set_property ro.hardware.gralloc gbm
-				set_property debug.drm.mode.force ${video:-1280x800}
-			fi
-			set_prop_if_empty sleep.state none
-			;;
+			HWC=${HWC:-drm}
+			GRALLOC=${GRALLOC:-gbm}
+			video=${video:-1280x768}
+			;&
 		*i915|*radeon|*nouveau|*vmwgfx|*amdgpu)
 			if [ "$HWACCEL" != "0" ]; then
-				set_property ro.hardware.gralloc drm
+				${HWC:+set_property ro.hardware.hwcomposer $HWC}
+				set_property ro.hardware.gralloc ${GRALLOC:-drm}
 				set_drm_mode
 			fi
 			;;
@@ -229,7 +227,7 @@ function init_hal_power()
 
 	# TODO
 	case "$PRODUCT" in
-		HP*Omni*|OEMB|Surface*3|T10*TA)
+		HP*Omni*|OEMB|Standard*PC*|Surface*3|T10*TA|VMware*)
 			set_prop_if_empty sleep.state none
 			;;
 		e-tab*Pro)
