@@ -185,8 +185,8 @@ function init_uvesafb()
 
 function init_hal_gralloc()
 {
-	case "$(cat /proc/fb | head -1)" in
-		*virtiodrmfb)
+	case "$(readlink /sys/class/graphics/fb0/device/driver)" in
+		*virtio_gpu)
 			if [ "$HWACCEL" != "0" ]; then
 				set_property ro.hardware.hwcomposer drm
 				set_property ro.hardware.gralloc gbm
@@ -194,7 +194,7 @@ function init_hal_gralloc()
 			fi
 			set_prop_if_empty sleep.state none
 			;;
-		0*inteldrmfb|0*radeondrmfb|0*nouveaufb|0*svgadrmfb|0*amdgpudrmfb)
+		*i915|*radeon|*nouveau|*vmwgfx|*amdgpu)
 			if [ "$HWACCEL" != "0" ]; then
 				set_property ro.hardware.gralloc drm
 				set_drm_mode
@@ -203,7 +203,7 @@ function init_hal_gralloc()
 		"")
 			init_uvesafb
 			;&
-		0*)
+		*)
 			;;
 	esac
 
