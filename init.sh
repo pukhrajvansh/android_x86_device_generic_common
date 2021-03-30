@@ -348,6 +348,9 @@ function init_hal_sensors()
 		*T*0*TA*|*M80TA*)
 			set_property ro.iio.accel.y.opt_scale -1
 			;;
+		*T102HA*)
+			has_sensors=true
+			;;	
 		*)
 			has_sensors=false
 			;;

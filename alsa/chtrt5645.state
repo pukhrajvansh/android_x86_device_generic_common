@@ -1496,8 +1496,8 @@ state.chtrt5645 {
 	control.134 {
 		iface MIXER
 		name 'Headphone Playback Volume'
-		value.0 17
-		value.1 17
+		value.0 34
+		value.1 34
 		comment {
 			access 'read write'
 			type INTEGER
@@ -1593,7 +1593,7 @@ state.chtrt5645 {
 	control.141 {
 		iface MIXER
 		name 'IN1 Boost'
-		value 0
+		value 3
 		comment {
 			access 'read write'
 			type INTEGER
@@ -1607,7 +1607,7 @@ state.chtrt5645 {
 	control.142 {
 		iface MIXER
 		name 'IN2 Boost'
-		value 0
+		value 8
 		comment {
 			access 'read write'
 			type INTEGER
@@ -1621,8 +1621,8 @@ state.chtrt5645 {
 	control.143 {
 		iface MIXER
 		name 'IN Capture Volume'
-		value.0 31
-		value.1 31
+		value.0 27
+		value.1 27
 		comment {
 			access 'read write'
 			type INTEGER
@@ -1648,8 +1648,8 @@ state.chtrt5645 {
 	control.145 {
 		iface MIXER
 		name 'ADC Capture Volume'
-		value.0 31
-		value.1 31
+		value.0 55
+		value.1 55
 		comment {
 			access 'read write'
 			type INTEGER
@@ -1691,8 +1691,8 @@ state.chtrt5645 {
 	control.148 {
 		iface MIXER
 		name 'ADC Boost Capture Volume'
-		value.0 3
-		value.1 3
+		value.0 0
+		value.1 0
 		comment {
 			access 'read write'
 			type INTEGER
@@ -1707,8 +1707,8 @@ state.chtrt5645 {
 	control.149 {
 		iface MIXER
 		name 'Mono ADC Boost Capture Volume'
-		value.0 2
-		value.1 2
+		value.0 0
+		value.1 0
 		comment {
 			access 'read write'
 			type INTEGER
@@ -1743,7 +1743,7 @@ state.chtrt5645 {
 	control.152 {
 		iface CARD
 		name 'Headphone Jack'
-		value true
+		value false
 		comment {
 			access read
 			type BOOLEAN
@@ -1753,7 +1753,7 @@ state.chtrt5645 {
 	control.153 {
 		iface CARD
 		name 'Headset Mic Jack'
-		value true
+		value false
 		comment {
 			access read
 			type BOOLEAN
@@ -1763,7 +1763,7 @@ state.chtrt5645 {
 	control.154 {
 		iface MIXER
 		name 'Headphone Switch'
-		value true
+		value false
 		comment {
 			access 'read write'
 			type BOOLEAN
@@ -1773,7 +1773,7 @@ state.chtrt5645 {
 	control.155 {
 		iface MIXER
 		name 'Headset Mic Switch'
-		value true
+		value false
 		comment {
 			access 'read write'
 			type BOOLEAN
@@ -1783,7 +1783,7 @@ state.chtrt5645 {
 	control.156 {
 		iface MIXER
 		name 'Int Mic Switch'
-		value true
+		value false
 		comment {
 			access 'read write'
 			type BOOLEAN
@@ -1915,7 +1915,7 @@ state.chtrt5645 {
 	control.169 {
 		iface MIXER
 		name 'Stereo1 ADC2 Mux'
-		value 'DAC MIX'
+		value DMIC
 		comment {
 			access 'read write'
 			type ENUMERATED
@@ -1963,7 +1963,7 @@ state.chtrt5645 {
 	control.173 {
 		iface MIXER
 		name 'Mono ADC L2 Mux'
-		value 'Mono DAC MIXL'
+		value 'DMIC'
 		comment {
 			access 'read write'
 			type ENUMERATED
@@ -1999,7 +1999,7 @@ state.chtrt5645 {
 	control.176 {
 		iface MIXER
 		name 'Mono ADC R2 Mux'
-		value 'Mono DAC MIXR'
+		value 'DMIC'
 		comment {
 			access 'read write'
 			type ENUMERATED
@@ -2061,7 +2061,7 @@ state.chtrt5645 {
 	control.182 {
 		iface MIXER
 		name 'Mono ADC MIXL ADC2 Switch'
-		value false
+		value true
 		comment {
 			access 'read write'
 			type BOOLEAN
@@ -2081,7 +2081,7 @@ state.chtrt5645 {
 	control.184 {
 		iface MIXER
 		name 'Mono ADC MIXR ADC2 Switch'
-		value false
+		value true
 		comment {
 			access 'read write'
 			type BOOLEAN

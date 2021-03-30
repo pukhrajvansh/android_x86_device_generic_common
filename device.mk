@@ -80,6 +80,8 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.sip.xml:system/etc/permissions/android.software.sip.xml \
     frameworks/native/data/etc/android.software.webview.xml:system/etc/permissions/android.software.webview.xml \
     $(foreach f,$(wildcard $(LOCAL_PATH)/alsa/*),$(f):$(subst $(LOCAL_PATH),system/etc,$(f))) \
+    $(foreach f,$(wildcard $(LOCAL_PATH)/atomisp/*),$(f):$(subst $(LOCAL_PATH),system/etc,$(f))) \
+    $(foreach f,$(wildcard $(LOCAL_PATH)/firmware/*),$(f):$(subst $(LOCAL_PATH),system/vendor,$(f))) \
     $(foreach f,$(wildcard $(LOCAL_PATH)/idc/*.idc $(LOCAL_PATH)/keylayout/*.kl),$(f):$(subst $(LOCAL_PATH),system/usr,$(f)))
 
 PRODUCT_TAGS += dalvik.gc.type-precise
