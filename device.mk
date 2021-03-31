@@ -82,6 +82,7 @@ PRODUCT_COPY_FILES += \
     $(foreach f,$(wildcard $(LOCAL_PATH)/alsa/*),$(f):$(subst $(LOCAL_PATH),system/etc,$(f))) \
     $(foreach f,$(wildcard $(LOCAL_PATH)/atomisp/*),$(f):$(subst $(LOCAL_PATH),system/etc,$(f))) \
     $(foreach f,$(wildcard $(LOCAL_PATH)/firmware/*),$(f):$(subst $(LOCAL_PATH),system/vendor,$(f))) \
+    $(LOCAL_PATH)/houdini9_y.sfs:system/etc/houdini9_y.sfs \
     $(foreach f,$(wildcard $(LOCAL_PATH)/idc/*.idc $(LOCAL_PATH)/keylayout/*.kl),$(f):$(subst $(LOCAL_PATH),system/usr,$(f)))
 
 PRODUCT_TAGS += dalvik.gc.type-precise
